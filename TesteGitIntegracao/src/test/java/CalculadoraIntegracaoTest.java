@@ -31,6 +31,21 @@ public class CalculadoraIntegracaoTest {
     }
 
     @Test
+    void deveMultiplicarESalvarNoHistoricoCorretamente() {
+        // 2. Ação (Action)
+        // Chama o método da calculadora, que por sua vez deve chamar o histórico
+        int resultado = calculadora.multiplicar(10, 5);
+
+        // 3. Verificação (Verification)
+        // Verifica se o resultado da calculadora está correto
+        assertEquals(50, resultado, "O resultado da soma deve ser 50");
+
+        // Verifica se a integração com o histórico funcionou
+        assertEquals(1, historico.getNumeroDeOperacoes(), "Deveria haver 1 operação registrada");
+        assertEquals("10 * 5 = 50", historico.getUltimaOperacao(), "A descrição da operação no histórico está incorreta");
+    }
+
+    @Test
     void deveRealizarMultiplasOperacoesEIntegrarComHistorico() {
         // Ação
         calculadora.somar(10, 5);

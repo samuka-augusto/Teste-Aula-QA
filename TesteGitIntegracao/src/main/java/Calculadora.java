@@ -18,4 +18,10 @@ public class Calculadora {
         historico.registrar(a + " - " + b + " = " + resultado);
         return resultado;
     }
+
+    public int multiplicar(int a, int b) {
+        int resultado = a * b;
+        historico.registrar(a + " * " + b + " = " + resultado);
+        return resultado;
+    }
 }
