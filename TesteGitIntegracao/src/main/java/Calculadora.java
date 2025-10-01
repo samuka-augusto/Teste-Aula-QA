@@ -7,10 +7,9 @@ public class Calculadora {
     }
 
     public int somar(int a, int b) {
-        int resultado = a + b;
         // Interage com o histórico para registrar a operação
-        historico.registrar(a + " + " + b + " = " + resultado);
-        return resultado;
+        historico.registrar(a + " + " + b + " = " + (a + b));
+        return (a + b);
     }
 
     public int subtrair(int a, int b) {
